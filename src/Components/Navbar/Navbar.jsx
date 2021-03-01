@@ -61,7 +61,7 @@ const Navbar = () => {
           
         </MenuItem>
         <MenuItem>
-          <IconButton aria-label="account" color="inherit">
+          <IconButton aria-label="account" color="inherit" component={Link} to="/signup">
               <AccountCircleIcon />
               <p className={classes.text}>Account</p>
           </IconButton>
@@ -103,7 +103,7 @@ const Navbar = () => {
                             <AttachMoneyIcon className={classes.iconbtn}/>
                             <p className={classes.text}>Sell</p>
                         </IconButton>
-                        <IconButton aria-label="account" color="inherit" >
+                        <IconButton aria-label="account" color="inherit" component={Link} to="/signup" >
                             <AccountCircleIcon className={classes.iconbtn}/>
                             <p className={classes.text}>Account</p>
                         </IconButton>
