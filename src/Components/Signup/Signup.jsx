@@ -7,40 +7,21 @@ import useStyles from './styles';
 const Signup = () => {
     const classes = useStyles();
 
-    const [fname, setfname] = useState('');
-    const [lname, setlname] = useState('');
-    const [age, setage] = useState('');
-    const [clg, setclg] = useState('');
-    const [email, setemail] = useState('');
-    const [pnum, setpnum] = useState('');
-    const [pass1, setpass1] = useState('');
-    const [pass2, setpass2] = useState('');
+    const [fname, setfname] = useState("");
+    const [lname, setlname] = useState("");
+    const [age, setage] = useState("");
+    const [clg, setclg] = useState("");
+    const [email, setemail] = useState("");
+    const [pnum, setpnum] = useState("");
+    const [pass1, setpass1] = useState("");
+    const [pass2, setpass2] = useState("");
 
-
-    const handlefnameChange = (event) => {
-        setfname(event.target.value);
-    };   
-    const handlelnameChange = (event) => {
-        setlname(event.target.value);
-    };
-    const handleageChange = (event) => {
-        setage(event.target.value);
-    };
-    const handleemailChange = (event) => {
-        setemail(event.target.value);
-    };
-    const handlepnumChange = (event) => {
-        setpnum(event.target.value);
-    };
-    const handlepass1Change = (event) => {
-        setpass1(event.target.value);
-    };
-    const handlepass2Change = (event) => {
-        setpass2(event.target.value);
-    };
-    const handleClgChange = (event) => {
-        setclg(event.target.value);
-    };
+    // Error States
+    const[fnameError, setfnameError] = useState("");
+    const[lnameError, setlnameError] = useState("");
+    const[pass1Error, setpass1Error] = useState("");
+    const[pass2Error, setpass2Error] = useState("");
+    const[passequalError, setpassequalerror] = useState("");
 
     const [open, setOpen] = useState(false);
     const handleClose = () => {
@@ -51,8 +32,34 @@ const Signup = () => {
         setOpen(true);
     };
 
+    const valid = () => {
+        if(fname.length < 3 || fname==null){
+            setfnameError("Invalid first name");
+        }
+        if(lname.length < 3 || lname==null){
+            setlnameError("Invalid last name");
+        }
+        if(pass1.length < 6){
+            setpass1Error("Length should be >= 6");
+        }
+        if(pass2.length < 6){
+            setpass2Error("Length should be >= 6");
+        }
+        if(pass1 != pass2){
+            setpassequalerror("Passwords doesn't match");
+        }
+    }
+
     const handleSubmitForm = (event) => {
-        
+        event.preventDefault();
+        setfnameError("");
+        setlnameError("");
+        setpass1Error("");
+        setpass2Error("");
+        setpassequalerror("");
+        if(valid()){
+
+        }
     };
 
     return (
@@ -71,10 +78,12 @@ const Signup = () => {
                             label="First Name" 
                             fullWidth
                             value={fname}
-                            onChange={handlefnameChange}    
+                            onChange={(event)=>{setfname(event.target.value)}}    
                             />
+                            <p className={classes.error}>{fnameError}</p>
                         </Grid>
                         
+                
                         <Grid item xs={6}>
                             <TextField 
                             required
@@ -82,8 +91,9 @@ const Signup = () => {
                             label="Last Name" 
                             fullWidth
                             value={lname}
-                            onChange={handlelnameChange}
+                            onChange={(event=>{setlname(event.target.value)})}
                             />
+                            <p className={classes.error}>{lnameError}</p>
                         </Grid>
                         <Grid item xs={6}>
                             <TextField 
@@ -93,7 +103,7 @@ const Signup = () => {
                             type="number" 
                             fullWidth
                             value={age}
-                            onChange={handleageChange}
+                            onChange={(event=>{setage(event.target.value)})}
                             />
                         </Grid>
                         <Grid item xs={6}>
@@ -107,7 +117,7 @@ const Signup = () => {
                                     onClose={handleClose}
                                     onOpen={handleOpen}
                                     value={clg}
-                                    onChange={handleClgChange}
+                                    onChange={(event=>{setclg(event.target.value)})}
                                     >
                                     <MenuItem value={"Thapar University"}>Thapar University</MenuItem>
                                     <MenuItem value={"Punjab Engineering College"}>Punjab Engineering College</MenuItem>
@@ -123,7 +133,7 @@ const Signup = () => {
                             type="email" 
                             fullWidth
                             value={email}
-                            onChange={handleemailChange}
+                            onChange={(event=>{setemail(event.target.value)})}
                             />
                         </Grid>
                         <Grid item xs={6}>
@@ -134,7 +144,7 @@ const Signup = () => {
                             type="text" 
                             fullWidth
                             value={pnum}
-                            onChange={handlepnumChange}
+                            onChange={(event=>{setpnum(event.target.value)})}
                             />
                         </Grid>
                         <Grid item xs={12}>
@@ -145,8 +155,9 @@ const Signup = () => {
                             type="password" 
                             fullWidth
                             value={pass1}
-                            onChange={handlepass1Change}
+                            onChange={(event=>{setpass1(event.target.value)})}
                             />
+                            <p className={classes.error}>{pass1Error}</p>
                         </Grid>
                         <Grid item xs={12}>
                             <TextField
@@ -156,12 +167,18 @@ const Signup = () => {
                             type="password" 
                             fullWidth 
                             value={pass2}
-                            onChange={handlepass2Change}/>
+                            onChange={(event=>{setpass2(event.target.value)})}                                
+                            />
+                            <p className={classes.error}>{pass2Error} {passequalError}</p>
                         </Grid>
                     </Grid>
                 </div>
                 <div className={classes.btn}>
                     <Button variant="contained" type="submit">Sign Up</Button>
+                </div>
+                <div className={classes.foot}>
+                    <Typography>Already have an account</Typography>
+                    <a href="#">Log in</a>
                 </div>
                 </form>
             </Paper>

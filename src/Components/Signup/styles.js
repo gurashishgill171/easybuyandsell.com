@@ -10,7 +10,7 @@ export default makeStyles((theme)=>({
         justifyContent: 'center',
     },
     paper: {
-        height: '500px',
+        height: 'auto',
         width: '100%',
         maxWidth: '670px',
         marginLeft: theme.spacing(3),
@@ -34,5 +34,19 @@ export default makeStyles((theme)=>({
         alignItems: 'center',
         justifyContent: 'center',
         marginTop: theme.spacing(4),
+    },
+    error: {
+        fontSize: '16px',
+        fontStyle: 'italic',
+        color: 'red',
+        margin: 0,
+    },
+    foot: {
+        display: 'flex',
+        width: '100%',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: theme.spacing(3),    
+        marginBottom: theme.spacing(3),    
     }
 }))
