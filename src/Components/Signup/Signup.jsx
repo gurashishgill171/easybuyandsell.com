@@ -17,11 +17,11 @@ const Signup = () => {
     const [pass2, setpass2] = useState("");
 
     // Error States
-    const[fnameError, setfnameError] = useState("");
-    const[lnameError, setlnameError] = useState("");
-    const[pass1Error, setpass1Error] = useState("");
-    const[pass2Error, setpass2Error] = useState("");
-    const[passequalError, setpassequalerror] = useState("");
+    let[fnameError, setfnameError] = useState("");
+    let[lnameError, setlnameError] = useState("");
+    let[pass1Error, setpass1Error] = useState("");
+    let[pass2Error, setpass2Error] = useState("");
+    let[passequalError, setpassequalerror] = useState("");
 
     const [open, setOpen] = useState(false);
     const handleClose = () => {
@@ -32,33 +32,49 @@ const Signup = () => {
         setOpen(true);
     };
 
-    const valid = () => {
+    let valid = () => {
+        let fnameError=""; let lnameError=""; let pass1Error=""; let pass2Error=""; let passequalError="";
+
         if(fname.length < 3 || fname==null){
-            setfnameError("Invalid first name");
+            fnameError = "Invalid first name" ;
         }
         if(lname.length < 3 || lname==null){
-            setlnameError("Invalid last name");
+            lnameError = "Invalid last name" ;
         }
         if(pass1.length < 6){
-            setpass1Error("Length should be >= 6");
+            pass1Error = "Length should be >= 6" ;
         }
         if(pass2.length < 6){
-            setpass2Error("Length should be >= 6");
+            pass2Error = "Length should be >= 6" ;
         }
         if(pass1 != pass2){
-            setpassequalerror("Passwords doesn't match");
+            passequalError = "Passwords doesn't match";
         }
+        
+        if(fnameError || lnameError || pass1Error || pass2Error || passequalError){
+            setfnameError(fnameError);
+            setlnameError(lnameError);
+            setpass1Error(pass1Error);
+            setpass2Error(pass2Error);
+            setpassequalerror(passequalError);
+            return false;
+        }
+        return true;
     }
 
     const handleSubmitForm = (event) => {
-        event.preventDefault();
-        setfnameError("");
-        setlnameError("");
-        setpass1Error("");
-        setpass2Error("");
-        setpassequalerror("");
-        if(valid()){
+        
+        let isValid = valid();
+        if(isValid){
+            setfnameError("");
+            setlnameError("");
+            setpass1Error("");
+            setpass2Error("");
+            setpassequalerror("");
 
+            alert("Form successfully recorded");
+        }else{
+            event.preventDefault();
         }
     };
 
@@ -177,7 +193,7 @@ const Signup = () => {
                     <Button variant="contained" type="submit">Sign Up</Button>
                 </div>
                 <div className={classes.foot}>
-                    <Typography>Already have an account</Typography>
+                    <Typography>Already have an account </Typography>
                     <a href="#">Log in</a>
                 </div>
                 </form>
