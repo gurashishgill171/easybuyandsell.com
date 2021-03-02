@@ -5,10 +5,11 @@ import Buy from './Components/Buy/Buy';
 import Signup from './Components/Signup/Signup';
 import Sell from './Components/Sell/Sell';
 import { Route, Switch, BrowserRouter as Router} from 'react-router-dom';
-
+import {CurrentUser} from './Components/Firebase/currentUser'
 
 function App() {
   return (
+    <CurrentUser>
     <Router>
         <div>
           <Switch>
@@ -33,6 +34,7 @@ function App() {
           </Switch>
         </div>
     </Router>
+    </CurrentUser>
   );
 }
 
