@@ -54,6 +54,7 @@ export default makeStyles((theme) =>({
         width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
+        cursor: 'pointer',
     },
     accordwrapper:{
        display: 'flex',
