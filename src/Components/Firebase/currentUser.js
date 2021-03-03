@@ -5,7 +5,7 @@ export const AuthContext=createContext();
 
 
 
-
+// {!currentUser? <Sign/> :<Login />> }
 
 export const CurrentUser = ({children}) => {
     

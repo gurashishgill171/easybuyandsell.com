@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Paper, Typography, Grid, TextField, FormControl, Select, MenuItem, InputLabel, Button } from '@material-ui/core';
 import useStyles from './styles';
 import { auth } from '../Firebase/firebase'
-import axios from 'axios'
+import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 
 const Signup = () => {
@@ -226,7 +227,7 @@ const Signup = () => {
                     </div>
                     <div className={classes.foot}>
                         <Typography>Already have an account </Typography>
-                        <a href="#">Log in</a>
+                        <Button component={Link} to="/login">Login</Button>
                     </div>
                 </form>
             </Paper>

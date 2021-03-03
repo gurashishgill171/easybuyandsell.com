@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import {AppBar, Toolbar, Typography, IconButton, Badge} from '@material-ui/core';
+import {AppBar, Toolbar, Typography, IconButton, Badge, Avatar, Select} from '@material-ui/core';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -9,6 +9,10 @@ import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import Logo from '../../assets/logo.png';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import CollectionsBookmarkIcon from '@material-ui/icons/CollectionsBookmark';
+import VpnKeyIcon from '@material-ui/icons/VpnKey';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import useStyles from './styles';
 import {Link} from 'react-router-dom';
 
@@ -17,15 +21,20 @@ const Navbar = () => {
     const classes = useStyles();
 
     const[menu, setMenu] = useState(null);
-
     const isMenuOpen = Boolean(menu);
-
     const handleMenuClose = () =>{
         setMenu(null);
     }
-
     const handleMenuopen = (event) =>{
         setMenu(event.currentTarget);
+    }
+
+    const[accord, setaccord] = useState(null);
+    const AccordianHandler = (event) =>{
+        setaccord(event.currentTarget);
+    }
+    const onClose = () =>{
+        setaccord(null);
     }
 
     const MenuId = 'menu-mobile';
@@ -61,20 +70,30 @@ const Navbar = () => {
           
         </MenuItem>
         <MenuItem>
-          <IconButton aria-label="account" color="inherit" component={Link} to="/signup">
-              <AccountCircleIcon />
-              <p className={classes.text}>Account</p>
-          </IconButton>
-          
-        </MenuItem>
-        <MenuItem>
-          <IconButton aria-label="Cart" color="inherit">
-            <Badge badgeContent={5} color="secondary" className={classes.badge}>
-              <ShoppingCartIcon />
-            </Badge>
-            <p className={classes.text}>Cart</p>
-          </IconButton>
-          
+          <div onClick={AccordianHandler} className={classes.center}>
+                <Avatar>G</Avatar>
+                <ArrowDropDownIcon/>
+          </div>
+          <Menu
+                id="simple-menu"
+                anchorEl={accord}
+                keepMounted
+                open={Boolean(accord)}
+                onClose={onClose}
+            >
+                <MenuItem onClick={onClose}>
+                    <CollectionsBookmarkIcon/>
+                    <p className={classes.text}>My Ads</p>
+                </MenuItem>
+                <MenuItem onClick={onClose}>
+                    <ExitToAppIcon/>
+                    <p className={classes.text}>Logout</p>
+                </MenuItem>
+                <MenuItem onClick={onClose} component={Link} to="/signup">
+                    <VpnKeyIcon/>
+                    <p className={classes.text}>Sign in</p>
+                </MenuItem>
+        </Menu>
         </MenuItem>
       </Menu>
     );
@@ -103,16 +122,32 @@ const Navbar = () => {
                             <AttachMoneyIcon className={classes.iconbtn}/>
                             <p className={classes.text}>Sell</p>
                         </IconButton>
-                        <IconButton aria-label="account" color="inherit" component={Link} to="/signup" >
-                            <AccountCircleIcon className={classes.iconbtn}/>
-                            <p className={classes.text}>Account</p>
-                        </IconButton>
-                        <IconButton aria-label="Cart" color="inherit" >
-                            <Badge badgeContent={5} color="secondary" className={classes.badge}>
-                                <ShoppingCartIcon className={classes.iconbtn}/>
-                            </Badge>
-                            <p className={classes.text}>Cart</p>
-                        </IconButton>
+                        <div className={classes.accordwrapper}>
+                            <div onClick={AccordianHandler} className={classes.center}>
+                                <Avatar>G</Avatar>
+                                <ArrowDropDownIcon/>
+                            </div>
+                            <Menu
+                                    id="simple-menu"
+                                    anchorEl={accord}
+                                    keepMounted
+                                    open={Boolean(accord)}
+                                    onClose={onClose}
+                                >
+                                    <MenuItem onClick={onClose}>
+                                        <CollectionsBookmarkIcon/>
+                                        <p className={classes.text}>My Ads</p>
+                                    </MenuItem>
+                                    <MenuItem onClick={onClose}>
+                                        <ExitToAppIcon/>
+                                        <p className={classes.text}>Logout</p>
+                                    </MenuItem>
+                                    <MenuItem onClick={onClose} component={Link} to="/signup">
+                                        <VpnKeyIcon/>
+                                         <p className={classes.text}>Sign in</p>
+                                    </MenuItem>
+                            </Menu>
+                        </div>
                     </div>
                 </Toolbar>
             </AppBar>

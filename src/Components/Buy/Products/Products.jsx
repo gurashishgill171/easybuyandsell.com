@@ -3,8 +3,14 @@ import { Grid } from '@material-ui/core';
 import Product from './Product/Product';
 
 const products = [
-    {id: 1, title: 'Shoes', description: 'Running shoes', image: '', price: '₹560', likes: '6'},
-    {id: 2, title: 'Mattress', description: 'Sleepwell mattress', image: '', price: '₹1200', likes: '15'},
+    {id: 1, title: 'Shoes', description: 'Running shoes', image: '', price: '₹560'},
+    {id: 1, title: 'Shoes', description: 'Running shoes', image: '', price: '₹560'},
+    {id: 1, title: 'Shoes', description: 'Running shoes', image: '', price: '₹560'},
+    {id: 2, title: 'Mattress', description: 'Sleepwell mattress', image: '', price: '₹1200'},
+    {id: 2, title: 'Mattress', description: 'Sleepwell mattress', image: '', price: '₹1200'},
+    {id: 2, title: 'Mattress', description: 'Sleepwell mattress', image: '', price: '₹1200'},
+    {id: 2, title: 'Mattress', description: 'Sleepwell mattress', image: '', price: '₹1200'},
+    {id: 2, title: 'Mattress', description: 'Sleepwell mattress', image: '', price: '₹1200'},
 ];
 
 const Products = () => {

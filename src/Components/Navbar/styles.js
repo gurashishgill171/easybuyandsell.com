@@ -33,13 +33,32 @@ export default makeStyles((theme) =>({
         }
     },
     text:{
-        fontSize: '18px',
+        fontSize: '22px',
+        [theme.breakpoints.down('xs')]: {
+            fontSize: '15px',
+        }
     },
     iconbtn: {
         paddingRight: '9px',
+        fontSize: '1.4em',
+        [theme.breakpoints.down('xs')]: {
+            fontSize: '1em',
+        }
     },
     badge: {
             top: '-4px',
             right: '4px',
     },
+    center:{
+        display: 'flex',
+        width: '100%',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    accordwrapper:{
+       display: 'flex',
+       alignItems: 'center',
+       justifyContent: 'center',
+       padding: '0px 5px',
+    }
 }));

@@ -23,7 +23,7 @@ const Product = ({ product }) => {
                     </div>
                     <Typography variant="subtitle1">{product.description}</Typography>
                 </CardContent>
-                <CardActions disableSpacing className={classes.cardactions}>
+                {/* <CardActions disableSpacing className={classes.cardactions}>
                     <div className={classes.cardactionitem1}>
                     <IconButton>
                         <ThumbUpIcon/>
@@ -36,7 +36,7 @@ const Product = ({ product }) => {
                         <AddShoppingCartIcon/>
                     </IconButton>
                     </div>
-                </CardActions>
+                </CardActions> */}
             </Card>
         </>
     )
