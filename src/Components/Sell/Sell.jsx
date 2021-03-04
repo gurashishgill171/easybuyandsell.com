@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useContext} from 'react';
 import useStyles from './styles';
 import {Typography, Paper, TextField, Grid, Button, InputLabel, Select, MenuItem} from '@material-ui/core';
 import ImageIcon from '@material-ui/icons/Image';
@@ -13,9 +13,14 @@ import ImportContactsIcon from '@material-ui/icons/ImportContacts';
 import SportsCricketIcon from '@material-ui/icons/SportsCricket';
 import AddIcon from '@material-ui/icons/Add';
 import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
+import axios from 'axios'
+import {AuthContext} from '../Firebase/currentUser'
+
+
 
 const Sell = () => {
     const classes = useStyles();
+    const {currentUser} = useContext(AuthContext)
     const [open, setOpen] = useState(false);
     const handleClose = () => {
         setOpen(false);
@@ -30,7 +35,7 @@ const Sell = () => {
     const[quantity, setquantity] = useState("");
     const[description, setdescription] = useState("");
     const[price, setprice] = useState("");
-
+    const [files, setfiles] = useState([])
     //Error States
     let[nameE, setnameE] = useState("");
     let[quantE, setquantE] = useState("");
@@ -62,6 +67,32 @@ const Sell = () => {
         }
         return true;
     }
+
+    const sell=()=>{
+        const data=new FormData()
+        data.append("name",name)
+        data.append("category",category)
+        data.append("quantity",quantity)
+        data.append("description",description)
+        data.append("college","Thapar University")
+        for (let i = 0; i < files.length; i++) {
+            data.append("productImage",files[i], files[i].name)
+        }
+        data.append("id","currentUser.uid")
+        data.append("price",price)
+
+        axios.post("http://localhost:8080/sell"
+                   ,data
+                   ,{headers: { "Content-Type": "multipart/form-data" }}
+                   ).then((res)=>{
+                       
+                    alert(res.data)
+                   }).catch((e)=>{alert(e)})
+
+    }
+
+
+
     const handleSaveProduct = (event) => {
         let isValid = valid();
         event.preventDefault();
@@ -70,7 +101,8 @@ const Sell = () => {
             setquantE("");
             setdescE("");
             setpriceE("");
-            alert("Your product has been saved!!!")
+            sell()
+           
         }
     }
     
@@ -197,10 +229,8 @@ const Sell = () => {
                     </Paper>
                     <Paper elevation={3} className={classes.paper}>
                         <Typography className={classes.fieldtitle}>Images</Typography>
-                        <AddAPhotoIcon className={classes.icon}/>
-                        <AddAPhotoIcon className={classes.icon}/>
-                        <AddAPhotoIcon className={classes.icon}/>
-                        <AddAPhotoIcon className={classes.icon}/>
+                       
+                        <input type="file" accept=".jpg, .jpeg, .png" multiple onChange={(event)=>{setfiles(event.target.files)}}/>
                     </Paper>
                     <div className={classes.btngroup}>
                         <Button variant="contained" startIcon={<SaveIcon />} className={classes.btn} onClick={handleSaveProduct}>Save Product</Button>
