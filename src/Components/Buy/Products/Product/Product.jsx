@@ -1,11 +1,15 @@
 import React from 'react'
-import {Card, CardMedia, CardContent, CardActions, Typography, IconButton} from '@material-ui/core';
-import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
-import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+import {Card, CardMedia, CardContent, CardActions, Typography, Button} from '@material-ui/core';
 import useStyles from './styles';
+import {Link} from 'react-router-dom';
+import Checkout from '../../../Checkout/Checkout';
 
 const Product = ({ product }) => {
     const classes = useStyles();
+
+    const handleCheckout = (product) => {
+        <Checkout product={product}/>
+    }
 
     return (
         <>
@@ -23,20 +27,14 @@ const Product = ({ product }) => {
                     </div>
                     <Typography variant="subtitle1">{product.description}</Typography>
                 </CardContent>
-                {/* <CardActions disableSpacing className={classes.cardactions}>
-                    <div className={classes.cardactionitem1}>
-                    <IconButton>
-                        <ThumbUpIcon/>
-                    </IconButton>
-                    <Typography variant="subtitle2">{product.likes}</Typography>
-                    </div>
+                <CardActions disableSpacing className={classes.cardactions}>
                     <div className={classes.cardactionitem2}>
-                    <Typography variant="subtitle2">ADD TO CART</Typography>
-                    <IconButton aria-label="Add to cart">
-                        <AddShoppingCartIcon/>
-                    </IconButton>
+                        <Button 
+                        variant="contained"
+                        onClick={()=>handleCheckout(product)}
+                        >Checkout</Button>
                     </div>
-                </CardActions> */}
+                </CardActions>
             </Card>
         </>
     )

@@ -5,6 +5,7 @@ export default makeStyles((theme)=> ({
     root: {
         maxWidth: '100%',
         margin: theme.spacing(2),
+        textDecoration: 'none',
     },
     media: {
         border: '2px solid red',

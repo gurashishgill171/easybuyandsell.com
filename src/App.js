@@ -5,6 +5,7 @@ import Buy from './Components/Buy/Buy';
 import Signup from './Components/Signup/Signup';
 import Sell from './Components/Sell/Sell';
 import Login from './Components/Login/Login';
+import Checkout from './Components/Checkout/Checkout';
 import { Route, Switch, BrowserRouter as Router} from 'react-router-dom';
 import {CurrentUser} from './Components/Firebase/currentUser'
 
@@ -34,6 +35,10 @@ function App() {
 
             <Route exact path="/login">
               <Login />
+            </Route>
+
+            <Route exact path="/checkout">
+              <Checkout />
             </Route>
 
           </Switch>

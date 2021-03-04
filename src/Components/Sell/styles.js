@@ -7,6 +7,7 @@ export default makeStyles ((theme)=>({
     },
     layout: {
         marginTop: theme.spacing(8),
+        marginBottom: theme.spacing(4),
         width: 'auto',
         marginLeft: theme.spacing(2),
         marginRight: theme.spacing(2),
@@ -64,5 +65,20 @@ export default makeStyles ((theme)=>({
         [theme.breakpoints.down('md')]:{
           flexDirection: 'column',
         }
-      }
+      },
+      items:{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
+      icon: {
+        fontSize: '40px',
+        margin: '0px 15px',
+      },
+      error: {
+        fontSize: '16px',
+        fontStyle: 'italic',
+        color: 'red',
+        margin: 0,
+    },
 }));
