@@ -1,7 +1,6 @@
 import React,{useState,useContext} from 'react';
 import useStyles from './styles';
 import {Typography, Paper, TextField, Grid, Button, InputLabel, Select, MenuItem} from '@material-ui/core';
-import ImageIcon from '@material-ui/icons/Image';
 import SaveIcon from '@material-ui/icons/Save';
 import DeleteIcon from '@material-ui/icons/Delete';
 import PhoneAndroidIcon from '@material-ui/icons/PhoneAndroid';
@@ -12,7 +11,6 @@ import FaceIcon from '@material-ui/icons/Face';
 import ImportContactsIcon from '@material-ui/icons/ImportContacts';
 import SportsCricketIcon from '@material-ui/icons/SportsCricket';
 import AddIcon from '@material-ui/icons/Add';
-import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
 import axios from 'axios'
 import {AuthContext} from '../Firebase/currentUser'
 
@@ -41,9 +39,10 @@ const Sell = () => {
     let[quantE, setquantE] = useState("");
     let[descE, setdescE] = useState("");
     let[priceE, setpriceE] = useState("");
+    let[fileE, setfileE] = useState("");
 
     let valid = () =>{
-        let nameE = ""; let quantE = ""; let descE = ""; let priceE = "";
+        let nameE = ""; let quantE = ""; let descE = ""; let priceE = ""; let fileE  = "";
         
         if(name.length < 3){
             nameE = "Invalid name";
@@ -57,12 +56,16 @@ const Sell = () => {
         if(price < 0){
             priceE = "Price cannot be < 0";
         }
+        if(files.length < 1 || files.length >5){
+            fileE = "Minimum 1 and Maximum 5 images can be uploaded";
+        }
 
-        if(nameE || quantE || descE || priceE){
+        if(nameE || quantE || descE || priceE || fileE){
             setnameE(nameE);
             setquantE(quantE);
             setdescE(descE);
             setpriceE(priceE);
+            setfileE(fileE);
             return false;
         }
         return true;
@@ -101,8 +104,8 @@ const Sell = () => {
             setquantE("");
             setdescE("");
             setpriceE("");
+            setfileE("");
             sell()
-           
         }
     }
     
@@ -229,8 +232,8 @@ const Sell = () => {
                     </Paper>
                     <Paper elevation={3} className={classes.paper}>
                         <Typography className={classes.fieldtitle}>Images</Typography>
-                       
                         <input type="file" accept=".jpg, .jpeg, .png" multiple onChange={(event)=>{setfiles(event.target.files)}}/>
+                        <p className={classes.error}>{fileE}</p>
                     </Paper>
                     <div className={classes.btngroup}>
                         <Button variant="contained" startIcon={<SaveIcon />} className={classes.btn} onClick={handleSaveProduct}>Save Product</Button>

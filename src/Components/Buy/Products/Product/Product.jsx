@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Card, CardMedia, CardContent, CardActions, Typography, Button} from '@material-ui/core';
 import useStyles from './styles';
 import {Link} from 'react-router-dom';
@@ -6,16 +6,12 @@ import Checkout from '../../../Checkout/Checkout';
 
 const Product = ({ product }) => {
     const classes = useStyles();
-
-    const handleCheckout = (product) => {
-        <Checkout product={product}/>
-    }
-
+     
     return (
         <>
             <div className={classes.toolbar}/>
             <Card className={classes.root}>
-                <CardMedia image={product.image} title={product.title} className={classes.media}/>
+                <CardMedia component="img" src={"http://localhost:3000/"+product.image[0]} title={product.title} className={classes.media}/>
                 <CardContent>
                     <div className={classes.cardcontent}>
                         <Typography variant="h5" gutterBottom>
@@ -31,7 +27,7 @@ const Product = ({ product }) => {
                     <div className={classes.cardactionitem2}>
                         <Button 
                         variant="contained"
-                        onClick={()=>handleCheckout(product)}
+                        component={Link} to="/checkout"
                         >Checkout</Button>
                     </div>
                 </CardActions>

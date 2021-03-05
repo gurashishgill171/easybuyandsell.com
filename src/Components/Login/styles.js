@@ -1,10 +1,10 @@
 import {makeStyles} from '@material-ui/core/styles';
 
 export default makeStyles((theme)=>({
-    container:{
-        margin: 0,
-        boxSizing: 'border-box',
+    container: {
         height: '100vh',
+        width: '100%',
+        border: '2px solid red',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -12,44 +12,33 @@ export default makeStyles((theme)=>({
     paper: {
         height: 'auto',
         width: '100%',
-        maxWidth: '670px',
-        marginLeft: theme.spacing(3),
-        marginRight: theme.spacing(3),
-        padding: theme.spacing(2),
+        maxWidth: '620px',
     },
-    formTitle: {
+    title:{
         width: '100%',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: theme.spacing(2),
-        marginBottom: theme.spacing(2),
+        fontSize: '24px',
+        fontWeight: 'bold',
     },
-    title: {
-        fontSize: '23px',
+    textfields: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginLeft: theme.spacing(4),
+        marginRight: theme.spacing(4),
+        marginTop: theme.spacing(4),
     },
-    btn: {
-        width: '100%',
+    btnwrapper: {
+        width : '100%',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         marginTop: theme.spacing(4),
+        marginBottom: theme.spacing(4),
     },
-    error: {
-        fontSize: '16px',
-        fontStyle: 'italic',
-        color: 'red',
-        margin: 0,
-    },
-    foot: {
-        display: 'flex',
-        width: '100%',
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginTop: theme.spacing(3),    
-        marginBottom: theme.spacing(3),    
-    },
-    btn2: {
+    btn: {
         marginLeft: theme.spacing(2),
     }
 }))

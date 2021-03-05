@@ -227,7 +227,7 @@ const Signup = () => {
                     </div>
                     <div className={classes.foot}>
                         <Typography>Already have an account </Typography>
-                        <Button component={Link} to="/login">Login</Button>
+                        <Button variant="contained" className={classes.btn2} component={Link} to="/login">Login</Button>
                     </div>
                 </form>
             </Paper>
