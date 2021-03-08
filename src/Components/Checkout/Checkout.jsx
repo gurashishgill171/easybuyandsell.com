@@ -2,25 +2,32 @@ import React from 'react';
 import useStyles from './styles';
 import ImageSlider from '../Checkout/ImageSlider/ImageSlider';
 import Navbar from '../Navbar/Navbar';
-import {Grid} from '@material-ui/core';
+import {Grid, Paper, Typography} from '@material-ui/core';
 
 
 
-const images = [{url :'https://source.unsplash.com/RyRpq9SUwAU/1600x900'},
-                {url :'https://source.unsplash.com/BeOW_PJjA0w/1600x900'},
-                {url :'https://source.unsplash.com/TMOeGZw9NY4/1600x900'},
-                {url :'https://source.unsplash.com/yXpA_eCbtzI/1600x900'},
-                {url :'https://source.unsplash.com/ULmaQh9Gvbg/1600x900'}
+const images = ['https://source.unsplash.com/RyRpq9SUwAU/1600x900',
+                'https://source.unsplash.com/ULmaQh9Gvbg/1600x900',
+                'https://source.unsplash.com/TMOeGZw9NY4/1600x900',
+                'https://source.unsplash.com/yXpA_eCbtzI/1600x900',
+                'https://source.unsplash.com/ULmaQh9Gvbg/1600x900',
             ]
 
 const Checkout = () => {
     const classes = useStyles();
     return (
         <>
-            {/* <Navbar /> */}
-                <div className={classes.sliderContainer}>
+            <Navbar />
+            <Grid conatiner direction="row" justify="center" alignItems="center">
+                <Grid item xs={12} md={6} className={classes.slider}>
                     <ImageSlider images={images}/>
-                </div>
+                </Grid>
+                <Grid item xs={12} md={3}>
+                    <Paper>
+                        <Typography>Product description</Typography>
+                    </Paper>
+                </Grid>
+            </Grid>
         </>
     )
 }
