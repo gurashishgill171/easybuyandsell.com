@@ -11,6 +11,7 @@ import {CurrentUser} from './Components/Firebase/currentUser'
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 
+
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -34,18 +35,9 @@ function App() {
         <CurrentUser>
           <Router>
               <div>
+              <Navbar /> 
                 <Switch>
-                  <Route exact path="/">
-                      <Navbar />
-                  </Route>
-                  
-                  <Route exact path="/buy">
-                    <Navbar />
-                      <Buy />
-                  </Route>
-
-                  <Route exact path="/sell">
-                      <Navbar />
+                   <Route exact path="/sell">
                       <Sell />
                   </Route>
 
@@ -55,6 +47,11 @@ function App() {
 
                   <Route exact path="/login">
                     <Login />
+                  </Route>
+
+                  <Route exact path="/buy">
+                   
+                      <Buy />
                   </Route>
 
                   <Route exact path="/checkout">

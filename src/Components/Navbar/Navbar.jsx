@@ -14,7 +14,7 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import useStyles from './styles';
 import {Link} from 'react-router-dom';
 import {AuthContext} from '../Firebase/currentUser';
-
+import {auth} from '../Firebase/firebase'
 
 
 
@@ -39,6 +39,10 @@ const Navbar = () => {
     }
     const onClose = () =>{
         setaccord(null);
+    }
+    
+    const logout=()=>{
+           auth.signOut()
     }
 
     const MenuId = 'menu-mobile';
@@ -74,6 +78,7 @@ const Navbar = () => {
           
         </MenuItem>
         <MenuItem>
+      
             {currentUser ? <>
             <div onClick={AccordianHandler} className={classes.center}>
                     <Avatar>G</Avatar>
@@ -90,7 +95,7 @@ const Navbar = () => {
                         <CollectionsBookmarkIcon/>
                         <p className={classes.text}>My Ads</p>
                     </MenuItem>
-                    <MenuItem onClick={onClose}>
+                    <MenuItem onClick={logout}>
                         <ExitToAppIcon/>
                         <p className={classes.text}>Logout</p>
                     </MenuItem>
@@ -145,7 +150,7 @@ const Navbar = () => {
                                         <CollectionsBookmarkIcon/>
                                         <p className={classes.text}>My Ads</p>
                                     </MenuItem>
-                                    <MenuItem onClick={onClose}>
+                                    <MenuItem onClick={logout}>
                                         <ExitToAppIcon/>
                                         <p className={classes.text}>Logout</p>
                                     </MenuItem>

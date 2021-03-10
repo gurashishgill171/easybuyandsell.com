@@ -1,10 +1,28 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import {Paper, Typography, TextField, Button } from '@material-ui/core';
 import useStyles from './styles';
 import {Link} from 'react-router-dom';
+import {auth} from '../Firebase/firebase'
+import { AuthContext } from '../Firebase/currentUser';
 
 const Login = () => {
     const classes = useStyles();
+     const [email, setemail] = useState()
+     const [password, setpassword] = useState()
+     const {currentUser}=useContext(AuthContext)
+     const login=()=>{
+              auth.signInWithEmailAndPassword(email,password)
+                  .then(()=>{
+                     alert("Succesfully Login")
+
+                  })
+                  .catch((e)=>{
+                    alert(e);
+                  })
+     }
+
+
+
     return (
         <div className={classes.container}>
             <Paper elevation={3} className={classes.paper}>
@@ -15,6 +33,8 @@ const Login = () => {
                         id="standard-required"
                         label="Username"
                         fullWidth
+                        value={email}
+                        onChange={(e)=>{setemail(e.target.value)}}
                     />
                     </div>
                     <div className={classes.textfields}>
@@ -23,10 +43,13 @@ const Login = () => {
                         id="standard-required"
                         label="Password"
                         fullWidth
+                        value={password}
+                        type="password"
+                        onChange={(e)=>{setpassword(e.target.value)}}
                     />
                     </div>
                 <div className={classes.btnwrapper}>
-                    <Button variant="contained">Log In</Button>
+                    <Button variant="contained" onClick={()=>{login()}}>Log In</Button>
                 </div>
                 <div className={classes.btnwrapper}>
                     <Typography>Don't have an account?</Typography>
