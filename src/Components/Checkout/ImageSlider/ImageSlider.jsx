@@ -1,48 +1,31 @@
 import React from 'react';
-import {Carousel} from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Slide } from 'react-slideshow-image';
+import 'react-slideshow-image/dist/styles.css'
+import './ImageSlider.css';
+
 
 const ImageSlider = ({images}) => {
     return (
-        <Carousel>
-            <Carousel.Item>
-                <img
-                className="d-block w-100"
-                src={images[0]}
-                alt="First slide"
-                />
-            </Carousel.Item>
-            <Carousel.Item>
-                <img
-                className="d-block w-100"
-                src={images[1]}
-                alt="Second slide"
-                />
-            </Carousel.Item>
-            <Carousel.Item>
-                <img
-                className="d-block w-100"
-                src={images[2]}
-                alt="Third slide"
-                />
-            </Carousel.Item>
-            <Carousel.Item>
-                <img
-                className="d-block w-100"
-                src={images[3]}
-                alt="Fourth slide"
-                />
-            </Carousel.Item>
-            <Carousel.Item>
-                <img
-                className="d-block w-100"
-                src={images[4]}
-                alt="Fifth slide"
-                />
-            </Carousel.Item>
-        </Carousel>
+      <div>
+        <Slide easing="ease">
+          <div className="each-slide">
+            <img src={images[0]} className="img"/>
+          </div>
+          <div className="each-slide">
+            <img src={images[1]} className="img"/>
+          </div>
+          <div className="each-slide">
+            <img src={images[2]} className="img"/>
+          </div>
+          <div className="each-slide">
+            <img src={images[3]} className="img"/>
+          </div>
+          <div className="each-slide">
+            <img src={images[4]} className="img"/>
+          </div>
+        </Slide>
+      </div>
     )
-}
+};
 
-export default ImageSlider
-
+export default ImageSlider;

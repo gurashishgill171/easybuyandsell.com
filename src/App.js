@@ -8,43 +8,64 @@ import Login from './Components/Login/Login';
 import Checkout from './Components/Checkout/Checkout';
 import { Route, Switch, BrowserRouter as Router} from 'react-router-dom';
 import {CurrentUser} from './Components/Firebase/currentUser'
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      light: '#df78ef',
+      main: '#ab47bc',
+      dark: '#790e8b',
+      contrastText: '#ffffff',
+    },
+    secondary: {
+      light: '#c0cfff',
+      main: '#8c9eff',
+      dark: '#5870cb',
+      contrastText: '#fafafa',
+    },
+  },
+});
 
 function App() {
   return (
-    <CurrentUser>
-    <Router>
-        <div>
-          <Switch>
-            <Route exact path="/">
-                <Navbar />
-            </Route>
-            
-            <Route exact path="/buy">
-               <Navbar />
-                <Buy />
-            </Route>
+    <ThemeProvider theme={theme}>
+        <CurrentUser>
+          <Router>
+              <div>
+                <Switch>
+                  <Route exact path="/">
+                      <Navbar />
+                  </Route>
+                  
+                  <Route exact path="/buy">
+                    <Navbar />
+                      <Buy />
+                  </Route>
 
-            <Route exact path="/sell">
-                <Navbar />
-                <Sell />
-            </Route>
+                  <Route exact path="/sell">
+                      <Navbar />
+                      <Sell />
+                  </Route>
 
-            <Route exact path="/signup">
-              <Signup />
-            </Route>
+                  <Route exact path="/signup">
+                    <Signup />
+                  </Route>
 
-            <Route exact path="/login">
-              <Login />
-            </Route>
+                  <Route exact path="/login">
+                    <Login />
+                  </Route>
 
-            <Route exact path="/checkout">
-              <Checkout />
-            </Route>
+                  <Route exact path="/checkout">
+                    <Checkout />
+                  </Route>
 
-          </Switch>
-        </div>
-    </Router>
-    </CurrentUser>
+                </Switch>
+              </div>
+          </Router>
+        </CurrentUser>
+    </ThemeProvider>
   );
 }
 

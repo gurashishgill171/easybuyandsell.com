@@ -17,9 +17,6 @@ import axios from 'axios'
 
 
   
-
-
-
 const Products = () => {
 
     let number=1;

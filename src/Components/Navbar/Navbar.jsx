@@ -106,7 +106,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <AppBar position="fixed" color="inherit" className={classes.appbar}>
+            <AppBar position="fixed" color="primary" className={classes.appbar}>
                 <Toolbar>
                 <img src={Logo} alt="Logo" className={classes.image}/>
                 <div className={classes.grow}/>
