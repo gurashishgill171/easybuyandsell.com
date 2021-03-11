@@ -58,21 +58,21 @@ const Navbar = () => {
       >
       <MenuItem>
           <IconButton aria-label="home" color="inherit" component={Link} to="/">
-              <HomeIcon />
+              {/* <HomeIcon /> */}
               <p className={classes.text}>Home</p>
           </IconButton>
           
         </MenuItem>
         <MenuItem>
           <IconButton aria-label="buy" color="inherit" component={Link} to="/buy">
-              <ShoppingBasketIcon />
+              {/* <ShoppingBasketIcon /> */}
               <p className={classes.text}>Buy</p>
           </IconButton>
           
         </MenuItem>
         <MenuItem>
           <IconButton aria-label="sell" color="inherit" component={Link} to="/sell">
-              <AttachMoneyIcon />
+              {/* <AttachMoneyIcon /> */}
               <p className={classes.text}>Sell</p>
           </IconButton>
           
@@ -92,15 +92,15 @@ const Navbar = () => {
                     onClose={onClose}
                 >
                     <MenuItem onClick={onClose}>
-                        <CollectionsBookmarkIcon/>
+                        {/* <CollectionsBookmarkIcon/> */}
                         <p className={classes.text}>My Ads</p>
                     </MenuItem>
                     <MenuItem onClick={logout}>
-                        <ExitToAppIcon/>
+                        {/* <ExitToAppIcon/> */}
                         <p className={classes.text}>Logout</p>
                     </MenuItem>
                     <MenuItem onClick={onClose} component={Link} to="/signup">
-                        <VpnKeyIcon/>
+                        {/* <VpnKeyIcon/> */}
                         <p className={classes.text}>Sign in</p>
                     </MenuItem>
             </Menu>
@@ -122,15 +122,15 @@ const Navbar = () => {
                     </div>
                     <div className={classes.desktopversion}>
                       <IconButton aria-label="Home" color="inherit" component={Link} to="/">
-                            <HomeIcon className={classes.iconbtn}/>
+                            {/* <HomeIcon className={classes.iconbtn}/> */}
                             <p className={classes.text}>Home</p>
                         </IconButton>
                         <IconButton aria-label="Buy" color="inherit" component={Link} to="/buy">
-                            <ShoppingBasketIcon className={classes.iconbtn}/>
+                            {/* <ShoppingBasketIcon className={classes.iconbtn}/> */}
                             <p className={classes.text}>Buy</p>
                         </IconButton>
                         <IconButton aria-label="Sell" color="inherit" component={Link} to="/sell">
-                            <AttachMoneyIcon className={classes.iconbtn}/>
+                            {/* <AttachMoneyIcon className={classes.iconbtn}/> */}
                             <p className={classes.text}>Sell</p>
                         </IconButton>
                         <div className={classes.accordwrapper}>
@@ -147,15 +147,15 @@ const Navbar = () => {
                                     onClose={onClose}
                                 >
                                     <MenuItem onClick={onClose}>
-                                        <CollectionsBookmarkIcon/>
+                                        {/* <CollectionsBookmarkIcon/> */}
                                         <p className={classes.text}>My Ads</p>
                                     </MenuItem>
                                     <MenuItem onClick={logout}>
-                                        <ExitToAppIcon/>
+                                        {/* <ExitToAppIcon/> */}
                                         <p className={classes.text}>Logout</p>
                                     </MenuItem>
                                     <MenuItem onClick={onClose} component={Link} to="/signup">
-                                        <VpnKeyIcon/>
+                                        {/* <VpnKeyIcon/> */}
                                          <p className={classes.text}>Sign in</p>
                                     </MenuItem>
                             </Menu>

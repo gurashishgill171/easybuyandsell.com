@@ -15,10 +15,10 @@ const Product = (props) => {
                 <CardMedia component="img" src={"http://localhost:8080/"+props.product.image[0]} title={props.product.title} className={classes.media}/>
                 <CardContent>
                     <div className={classes.cardcontent}>
-                        <Typography variant="h5" gutterBottom>
+                        <Typography variant="h5" gutterBottom className={classes.title}>
                             {props.product.title}
                         </Typography>
-                        <Typography variant="h6">
+                        <Typography variant="h6" className={classes.price}>
                             {props.product.price}
                         </Typography>
                     </div>
@@ -28,8 +28,9 @@ const Product = (props) => {
                     <div className={classes.cardactionitem2}>
                         <Button 
                         variant="contained"
+                        color= "secondary"
                         // component={Link} to="/checkout"
-                        ><Link to={{pathname:"/checkout",state:{id:props.id} }}>Checkout</Link></Button>
+                        ><Link to={{pathname:"/checkout",state:{id:props.id} }} className={classes.checkoutBtn}>Checkout</Link></Button>
                     </div>
                 </CardActions>
             </Card>

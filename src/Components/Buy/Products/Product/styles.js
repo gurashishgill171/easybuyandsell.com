@@ -6,9 +6,10 @@ export default makeStyles((theme)=> ({
         maxWidth: '100%',
         margin: theme.spacing(2),
         textDecoration: 'none',
+        backgroundColor: '#eeeeee',
     },
     media: {
-        border: '2px solid red',
+        borderBottom: '1px solid #616161',
         width: 'auto',
         height: '210px',
     },
@@ -32,5 +33,18 @@ export default makeStyles((theme)=> ({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'flex-end' 
+    },
+    title: {
+        fontWeight: 'bold',
+        fontFamily :'sans-serif',
+    },
+    price: {
+        fontSize: '24px',
+        fontWeight: 'bolder',
+        fontStyle: 'italic',
+    },
+    checkoutBtn:{
+        color: '#212121',
+        fontStyle: 'italic'
     }
 }))

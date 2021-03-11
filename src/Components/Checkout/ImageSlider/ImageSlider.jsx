@@ -1,7 +1,5 @@
 import React,{useState} from 'react';
-// import { Slide } from 'react-slideshow-image';
- //import 'react-slideshow-image/dist/styles.css'
- import './ImageSlider.css';
+import './ImageSlider.css';
 
 const ImageSlider = ({ images }) => { // takes in images as props
   const [index, setIndex] = useState(0); // create state to keep track of images index, set the default index to 0

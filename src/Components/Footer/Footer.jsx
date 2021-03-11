@@ -1,52 +1,55 @@
 import React from 'react';
-import {Container, Grid, IconButton, Typography, Button} from '@material-ui/core';
+import {IconButton, Typography, Button} from '@material-ui/core';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
-import PinDropIcon from '@material-ui/icons/PinDrop';
-import CallIcon from '@material-ui/icons/Call';
 import useStyles from './styles';
 import Logo from '../../assets/logo.png';
+import {Link} from 'react-router-dom';
 
 
 const Footer = () => {
     const classes = useStyles();
     return (
-        <Container className={classes.footerlayout} maxWidth="100%">
-            <div className={classes.container}>
-                <div className={classes.item}>
-                    <Typography  className={classes.title}>SHOP@TIET</Typography>
-                        <div className={classes.textwraper}>
-                                <div className={classes.info}>
-                                    <PinDropIcon/>
-                                    <Typography className={classes.subtext}>P.O. Box 32, Bhadson Road, Patiala, Punjab, Pin -147004, India</Typography>
-                                </div>
-                                <div className={classes.info}>
-                                    <CallIcon/>
-                                    <Typography className={classes.subtext}>+91-175-2393021</Typography>
-                                </div>
-                        </div>
+        <div className={classes.footerContainer}>
+            <div className={classes.logo}>
+                <img src={Logo} style={{width: '289px', height: 'auto'}}/>
+            </div>
+            <div className={classes.links}>
+                <div className={classes.linkitems}>
+                    <Typography className={classes.titles} color="primary">HOME</Typography>
                 </div>
-                <div className={classes.item}>
-                    <Typography  className={classes.title}>FOLLOW US ON</Typography>
-                    <div className={classes.itemWarper}>
-                        <IconButton>
-                            <InstagramIcon/>
-                        </IconButton>
-                        <IconButton>
-                            <LinkedInIcon/>
-                        </IconButton>
-                        <IconButton>
-                            <WhatsAppIcon/>
-                        </IconButton>
-                    </div>
+                <div className={classes.linkitems}>
+                    <Typography className={classes.titles} color="primary">BUY</Typography>
                 </div>
-                <div className={classes.item}>
-                    <Typography  className={classes.title}>SUPPORT US</Typography>
-                    <Button variant="contained">SUPPORT</Button>
+                <div className={classes.linkitems}>
+                    <Typography className={classes.titles} color="primary">SELL</Typography>
+                </div>
+                <div className={classes.linkitems}>
+                    <Typography className={classes.titles} color="primary">SIGN UP</Typography>
                 </div>
             </div>
-        </Container>
+            <div className={classes.socialLinks}>
+                <div className={classes.flex}>
+                    <Typography className={classes.titles} color="primary">FOLLOW US</Typography>
+                    <IconButton>
+                        <a href="https://www.linkedin.com/in/gurashish-gill-6516b41b6">
+                        <LinkedInIcon fontSize="large" color="primary"/>
+                        </a>
+                    </IconButton>
+                    <IconButton>
+                        <a href="https://www.instagram.com/gurashish_gill_18/">
+                        <InstagramIcon fontSize="large" color="primary"/>
+                        </a>
+                    </IconButton>
+                    <IconButton>
+                        <a href="https://google.com">
+                        <WhatsAppIcon fontSize="large" color="primary"/>
+                        </a>
+                    </IconButton>
+                </div>
+            </div>
+        </div>
     )
 }
 

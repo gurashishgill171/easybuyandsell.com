@@ -4,7 +4,6 @@ const drawerWidth = 0;
 
 export default makeStyles((theme) =>({
     appbar: {
-        boxShadow: '1px solid black',
         [theme.breakpoints.up('sm')] :{
             width: `calc(100% - ${drawerWidth}px)`,
             marginLeft: drawerWidth,
@@ -30,12 +29,14 @@ export default makeStyles((theme) =>({
         display: 'none',
         [theme.breakpoints.up('md')]: {
             display: 'flex',
+            width: '40%',
+            justifyContent: 'space-evenly',
         }
     },
     text:{
         fontSize: '22px',
-        [theme.breakpoints.down('xs')]: {
-            fontSize: '15px',
+        [theme.breakpoints.down('md')]: {
+            fontSize: '19px',
         }
     },
     iconbtn: {
@@ -61,5 +62,5 @@ export default makeStyles((theme) =>({
        alignItems: 'center',
        justifyContent: 'center',
        padding: '0px 5px',
-    }
+    },
 }));

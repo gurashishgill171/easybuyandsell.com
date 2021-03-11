@@ -3,6 +3,7 @@ import { Button, Grid } from '@material-ui/core';
 import Product from './Product/Product';
 import axios from 'axios'
 import { AuthContext } from '../../Firebase/currentUser'
+import { CenterFocusStrong } from '@material-ui/icons';
 
 
 
@@ -47,7 +48,7 @@ const Products = () => {
                     </Grid>
                 ))}
             </Grid>
-            <Button onClick={loadMore}>LoadMore</Button>
+            <Button onClick={loadMore} variant="contained" style={{width:' 100%', display: 'flex', alignItems: 'center', justifyContent: 'center', maxWidth: '120px', margin: 'auto'}}>LoadMore</Button>
         </main>
     )
 }

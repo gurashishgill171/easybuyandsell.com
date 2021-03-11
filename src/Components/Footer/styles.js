@@ -1,48 +1,45 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
-    footerlayout: {
-        marginTop: theme.spacing(16),
-        backgroundColor: '#94bbe9',
-        height: 'auto',
+    footerContainer: {
+        margin: 0,
+        marginTop: theme.spacing(8),
+        width: '100%',
+        height: '450px',
+        backgroundColor: '#000000FF',
     },
-    container: {
+    logo:{
+        width: '100%',
+        height: '45%',
+        display: 'flex',
+        alignItems: 'flex-end',
+        justifyContent: 'center',
+    },
+    links: {
+        width: '100%',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'space-between',
+        justifyContent: "center",
+    },
+    linkitems: {
+        margin: '21px 30px',
+    },
+    titles:{
+        fontSize: '21px',
         [theme.breakpoints.down('md')]: {
-            flexDirection: 'column',
+            fontSize: '18px',
         }
     },
-    item: {
+    socialLinks:{
+        width: '100%',
+        height: '30%',
         display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
+        alignItems: 'flex-end',
         justifyContent: 'center',
-        padding: theme.spacing(4),
     },
-    itemWarper: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-    },
-    logo: {
-        width: '156px',
-        height: '74px',
-    },
-    info: {
+    flex:{
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '15px 0px',
-    },
-    title:{
-        fontSize: '26px',
-        fontWeight: 'bold',
-        justify: 'center',
-        padding: '25px 0px',
-    },
-    subtext: {
-        fontSize: '16px',
     }
 }))
