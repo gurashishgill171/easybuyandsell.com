@@ -9,7 +9,6 @@ const Buy = () => {
     return (
         <div className={classes.content}>
             <Products />
-            <Footer />
         </div>
     )
 }

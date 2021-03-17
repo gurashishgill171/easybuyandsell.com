@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
     footerContainer: {
         margin: 0,
-        marginTop: theme.spacing(8),
+       // marginTop: theme.spacing(8),
         width: '100%',
         height: '450px',
         backgroundColor: '#000000FF',
