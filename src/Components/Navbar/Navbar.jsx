@@ -3,14 +3,8 @@ import {AppBar, Toolbar, Typography, IconButton, Badge, Avatar, Select, Button} 
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import MenuIcon from '@material-ui/icons/Menu';
-import HomeIcon from '@material-ui/icons/Home';
-import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
-import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import Logo from '../../assets/logo.png';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
-import CollectionsBookmarkIcon from '@material-ui/icons/CollectionsBookmark';
-import VpnKeyIcon from '@material-ui/icons/VpnKey';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import useStyles from './styles';
 import {Link} from 'react-router-dom';
 import {AuthContext} from '../Firebase/currentUser';
@@ -56,23 +50,20 @@ const Navbar = () => {
         open={isMenuOpen}
         onClose={handleMenuClose}
       >
-      <MenuItem>
+        <MenuItem>
           <IconButton aria-label="home" color="inherit" component={Link} to="/">
-              {/* <HomeIcon /> */}
               <p className={classes.text}>Home</p>
           </IconButton>
           
         </MenuItem>
         <MenuItem>
           <IconButton aria-label="buy" color="inherit" component={Link} to="/buy">
-              {/* <ShoppingBasketIcon /> */}
               <p className={classes.text}>Buy</p>
           </IconButton>
           
         </MenuItem>
         <MenuItem>
           <IconButton aria-label="sell" color="inherit" component={Link} to="/sell">
-              {/* <AttachMoneyIcon /> */}
               <p className={classes.text}>Sell</p>
           </IconButton>
           
@@ -92,15 +83,12 @@ const Navbar = () => {
                     onClose={onClose}
                 >
                     <MenuItem onClick={onClose}>
-                        {/* <CollectionsBookmarkIcon/> */}
                         <p className={classes.text}>My Ads</p>
                     </MenuItem>
                     <MenuItem onClick={logout}>
-                        {/* <ExitToAppIcon/> */}
                         <p className={classes.text}>Logout</p>
                     </MenuItem>
                     <MenuItem onClick={onClose} component={Link} to="/signup">
-                        {/* <VpnKeyIcon/> */}
                         <p className={classes.text}>Sign in</p>
                     </MenuItem>
             </Menu>
@@ -122,15 +110,12 @@ const Navbar = () => {
                     </div>
                     <div className={classes.desktopversion}>
                       <IconButton aria-label="Home" color="inherit" component={Link} to="/">
-                            {/* <HomeIcon className={classes.iconbtn}/> */}
                             <p className={classes.text}>Home</p>
                         </IconButton>
                         <IconButton aria-label="Buy" color="inherit" component={Link} to="/buy">
-                            {/* <ShoppingBasketIcon className={classes.iconbtn}/> */}
                             <p className={classes.text}>Buy</p>
                         </IconButton>
                         <IconButton aria-label="Sell" color="inherit" component={Link} to="/sell">
-                            {/* <AttachMoneyIcon className={classes.iconbtn}/> */}
                             <p className={classes.text}>Sell</p>
                         </IconButton>
                         <div className={classes.accordwrapper}>
@@ -147,15 +132,12 @@ const Navbar = () => {
                                     onClose={onClose}
                                 >
                                     <MenuItem onClick={onClose}>
-                                        {/* <CollectionsBookmarkIcon/> */}
                                         <p className={classes.text}>My Ads</p>
                                     </MenuItem>
                                     <MenuItem onClick={logout}>
-                                        {/* <ExitToAppIcon/> */}
                                         <p className={classes.text}>Logout</p>
                                     </MenuItem>
                                     <MenuItem onClick={onClose} component={Link} to="/signup">
-                                        {/* <VpnKeyIcon/> */}
                                          <p className={classes.text}>Sign in</p>
                                     </MenuItem>
                             </Menu>

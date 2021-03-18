@@ -4,5 +4,6 @@ export default makeStyles((theme) => ({
     content: {
         marginTop: theme.spacing(8),
         backgroundColor: '#ffffff',
+        overflow: 'hidden',
     }
 }))

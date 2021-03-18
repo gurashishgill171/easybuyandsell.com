@@ -236,8 +236,8 @@ const Sell = () => {
                         <p className={classes.error}>{fileE}</p>
                     </Paper>
                     <div className={classes.btngroup}>
-                        <Button variant="contained" startIcon={<SaveIcon />} className={classes.btn} onClick={handleSaveProduct}>Save Product</Button>
-                        <Button variant="contained" startIcon={<DeleteIcon />} className={classes.btn}>Delete</Button>
+                        <Button variant="contained" color="secondary" startIcon={<SaveIcon />} className={classes.btn} onClick={handleSaveProduct}>Save Product</Button>
+                        {/* <Button variant="contained" startIcon={<DeleteIcon />} className={classes.btn}>Delete</Button> */}
                     </div>
                 </main>
             </div>

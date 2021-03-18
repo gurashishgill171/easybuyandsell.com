@@ -13,10 +13,10 @@ export default makeStyles((theme) =>({
         flexGrow : 1,
     },
     image: {
-        height: '60px',
+        height: '50px',
         margin: '10px 0px',
         [theme.breakpoints.up('md')]: {
-            height: '75px',
+            height: '60px',
         }
     },
     mobileversion: {

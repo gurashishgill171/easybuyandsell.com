@@ -8,6 +8,7 @@ export default makeStyles((theme)=>({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        marginTop: theme.spacing(10),
     },
     paper: {
         height: 'auto',

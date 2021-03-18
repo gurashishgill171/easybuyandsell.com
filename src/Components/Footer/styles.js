@@ -41,5 +41,11 @@ export default makeStyles((theme) => ({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    lastfooter:{
+        display:'flex',
+        height: '49px',
+        alignItems: 'center',
+        justifyContent: 'center',
     }
 }))

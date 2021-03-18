@@ -1,46 +1,50 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import { CardHeader, IconButton, Button } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
+    width: '410px',
+    height: 'auto',
     margin:'20px',
   },
   media: {
-    height: 140,
+    height: '256px',
   },
+  btn: {
+    width: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
 });
 
 export default function MediaCard(props) {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image={props.image}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            {props.name}
-          </Typography>
-          {/* <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
-          </Typography> */}
-        </CardContent>
-      </CardActionArea>
+    <Card className={classes.root} elevation={6}>
+      <CardHeader 
+        title={props.name}
+      />
+      <CardMedia
+        className={classes.media}
+        image={props.image}
+      />
+      <CardContent gutterBottom variant="h5" component="h2">
+        <Typography>
+          {props.description}
+        </Typography>
+      </CardContent>
       <CardActions>
-        <Button size="small" color="primary" href={props.link}>
-          Linkdin Profile
+        <Button className={classes.btn}>
+          <LinkedInIcon color="secondary"/>
         </Button>
       </CardActions>
     </Card>

@@ -44,7 +44,7 @@ export default makeStyles((theme)=> ({
         fontStyle: 'italic',
     },
     checkoutBtn:{
-        color: '#212121',
+        color: '#ffffff',
         fontStyle: 'italic'
     }
 }))

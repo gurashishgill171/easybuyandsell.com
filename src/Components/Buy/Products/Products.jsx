@@ -48,7 +48,7 @@ const Products = () => {
                     </Grid>
                 ))}
             </Grid>
-            <Button onClick={loadMore} variant="contained" style={{width:' 100%', display: 'flex', alignItems: 'center', justifyContent: 'center', maxWidth: '120px', margin: 'auto'}}>LoadMore</Button>
+            <Button onClick={loadMore} variant="contained" color="secondary" style={{width:' 100%', display: 'flex', alignItems: 'center', justifyContent: 'center', maxWidth: '120px', margin: 'auto', marginBottom: '56px',marginTop: '56px'}}>LoadMore</Button>
         </main>
     )
 }

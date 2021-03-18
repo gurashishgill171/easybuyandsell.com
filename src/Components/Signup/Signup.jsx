@@ -112,6 +112,7 @@ const Signup = () => {
     };
 
     return (
+        <>
         <div className={classes.container}>
             <Paper elevation={3} className={classes.paper}>
                 <form onSubmit={handleSubmitForm}>
@@ -223,15 +224,16 @@ const Signup = () => {
                         </Grid>
                     </div>
                     <div className={classes.btn}>
-                        <Button variant="contained" type="submit" >Sign Up</Button>
+                        <Button variant="contained" type="submit" color="secondary">Sign Up</Button>
                     </div>
                     <div className={classes.foot}>
-                        <Typography>Already have an account </Typography>
-                        <Button variant="contained" className={classes.btn2} component={Link} to="/login">Login</Button>
+                        <Typography>Already have an account?</Typography>
+                        <Button variant="contained" color="secondary" className={classes.btn2} component={Link} to="/login">Login</Button>
                     </div>
                 </form>
             </Paper>
         </div>
+    </>
     )
 }
 
