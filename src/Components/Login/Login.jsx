@@ -26,7 +26,7 @@ const Login = () => {
     return (
         <div className={classes.container}>
             <Paper elevation={3} className={classes.paper}>
-                <Typography className={classes.title}>Log In</Typography>
+                <Typography className={classes.title}>LOG IN</Typography>
                     <div className={classes.textfields}>
                     <TextField
                         required

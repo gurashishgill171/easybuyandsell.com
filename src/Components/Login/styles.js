@@ -2,9 +2,9 @@ import {makeStyles} from '@material-ui/core/styles';
 
 export default makeStyles((theme)=>({
     container: {
+        backgroundColor: '#3f51b5',
         height: '100vh',
         width: '100%',
-        border: '2px solid red',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -20,7 +20,7 @@ export default makeStyles((theme)=>({
         alignItems: 'center',
         justifyContent: 'center',
         fontSize: '24px',
-        fontWeight: 'bold',
+        marginTop: theme.spacing(4),
     },
     textfields: {
         display: 'flex',
