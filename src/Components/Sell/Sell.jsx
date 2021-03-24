@@ -81,7 +81,7 @@ const Sell = () => {
         for (let i = 0; i < files.length; i++) {
             data.append("productImage",files[i], files[i].name)
         }
-        data.append("id","currentUser.uid")
+        data.append("id",currentUser.uid)
         data.append("price",price)
 
         axios.post("http://localhost:8080/sell"

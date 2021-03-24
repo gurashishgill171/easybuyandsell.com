@@ -7,11 +7,13 @@ import { CenterFocusStrong } from '@material-ui/icons';
 
 
 
-const Products = () => {
+const Products = (props) => {
 
     let number = 1;
     const { products } = useContext(AuthContext)
     const { setproducts } = useContext(AuthContext)
+    const { searchProducts } = useContext(AuthContext)
+    const isSearch=props.isSearch
 
 
     const loadMore=() => {
@@ -36,18 +38,30 @@ const Products = () => {
             .catch((e) => { alert(e) })
 
     }
-
-
+    
+    
 
     return (
         <main>
-            <Grid container justify="center" spacing={4}>
+            {isSearch===false?
+                <Grid container justify="center" spacing={4}>
                 {products.map((product,id) => (
                     <Grid item key={product.id} xs={12} md={6} lg={4}>
+                   
                         <Product product={product} id={id} />
                     </Grid>
                 ))}
-            </Grid>
+             </Grid>
+            :
+            <Grid container justify="center" spacing={4}>
+                {searchProducts.map((product,id) => (
+                    
+                    <Grid item key={product.id} xs={12} md={6} lg={4}>
+                       
+                        <Product product={product} id={id} />
+                    </Grid>
+                ))}
+            </Grid>}
             <Button onClick={loadMore} variant="contained" color="secondary" style={{width:' 100%', display: 'flex', alignItems: 'center', justifyContent: 'center', maxWidth: '120px', margin: 'auto', marginBottom: '56px',marginTop: '56px'}}>LoadMore</Button>
         </main>
     )

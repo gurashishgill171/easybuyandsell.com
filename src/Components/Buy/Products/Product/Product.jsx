@@ -9,7 +9,7 @@ const Product = (props) => {
     const classes = useStyles();
      
     return (
-        <>
+        <>   
             <div className={classes.toolbar}/>
             <Card className={classes.root}>
                 <CardMedia component="img" src={"http://localhost:8080/"+props.product.image[0]} title={props.product.title} className={classes.media}/>
