@@ -10,12 +10,10 @@ import { CardHeader, IconButton, Button } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
-    width: '410px',
+    width: 'auto',
+    maxWidth: '410px',
     height: 'auto',
     margin:'20px',
-  },
-  media: {
-    height: '256px',
   },
   btn: {
     width: '100%',
@@ -33,10 +31,16 @@ export default function MediaCard(props) {
       <CardHeader 
         title={props.name}
       />
-      <CardMedia
-        className={classes.media}
-        image={props.image}
-      />
+     <CardMedia
+        style={{
+          width: "100%",
+          maxHeight: "256px",
+          height: 'auto',
+          objectFit: 'contain',
+        }}
+          component="img"
+          image={props.image}
+    />
       <CardContent gutterBottom variant="h5" component="h2">
         <Typography>
           {props.description}

@@ -49,11 +49,11 @@ const Login = () => {
                     />
                     </div>
                 <div className={classes.btnwrapper}>
-                    <Button variant="contained" onClick={()=>{login()}}>Log In</Button>
+                    <Button variant="contained" onClick={()=>{login()}} color="secondary">Log In</Button>
                 </div>
                 <div className={classes.btnwrapper}>
                     <Typography>Don't have an account?</Typography>
-                    <Button variant="contained" className={classes.btn} component={Link} to="/signup">Sign In</Button>
+                    <Button variant="contained" className={classes.btn} component={Link} to="/signup" color="secondary">Sign In</Button>
                 </div>
             </Paper>
         </div>

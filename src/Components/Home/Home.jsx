@@ -6,7 +6,7 @@ import aboutus from '../../assets/aboutus.png';
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
 import { Link } from 'react-router-dom';
 import MediaCard from './MediaCard';
-import gurashish from '../../assets/char.jpg';
+import gurashish from '../../assets/Gurashish.png';
 import parmeet from '../../assets/char.jpg';
 
 const Home = () => {
@@ -21,10 +21,9 @@ const Home = () => {
                     in College is very easy!!!</Typography>
                     <Typography className={classes.description}>Join people using EASYBUYANDSELL.COM to painlessly buying and selling products at your college.Buy clicking Buy Now you can see various products available to buy. Buy clicking Sell Now you can easily sell your products by adding some information.</Typography>
                     <div className={classes.btns}>
-                    <Button variant="contained" className={classes.btn} color="secondary" component={Link} to="/buy">Buy Now <ArrowRightAltIcon/></Button>
-                    <Button variant="contained" className={classes.btn} color="secondary" component={Link} to="/sell">Sell Now <ArrowRightAltIcon/></Button>
-                </div>
-                    
+                        <Button variant="contained" className={classes.btn} color="secondary" component={Link} to="/buy">Buy Now <ArrowRightAltIcon/></Button>
+                        <Button variant="contained" className={classes.btn} color="secondary" component={Link} to="/sell">Sell Now <ArrowRightAltIcon/></Button>
+                    </div>      
                 </div>
                 <div className={classes.rightsec1}>
                     <img src={homebg} className={classes.homebgimg}/>

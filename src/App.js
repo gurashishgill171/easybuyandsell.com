@@ -38,32 +38,36 @@ function App() {
     <div className="App">
       <ThemeProvider theme={theme}>
         <CurrentUser>
-          <Router>
-            <Navbar />
+          <Router> 
             <div>
               <Switch>
                 <Route exact path="/">
+                  <Navbar />
                   <Home />
                 </Route>
 
                 <Route exact path="/sell">
+                  <Navbar />
                   <Sell />
                 </Route>
 
                 <Route exact path="/signup">
+                  <Navbar />
                   <Signup />
                 </Route>
 
                 <Route exact path="/login">
+                  <Navbar />
                   <Login />
                 </Route>
 
                 <Route exact path="/buy">
-
+                  <Navbar />
                   <Buy />
                 </Route>
 
                 <Route exact path="/checkout">
+                  <Navbar />
                   <Checkout />
                 </Route>
 

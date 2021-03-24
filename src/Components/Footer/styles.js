@@ -3,10 +3,12 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
     footerContainer: {
         margin: 0,
-       // marginTop: theme.spacing(8),
         width: '100%',
         height: '450px',
         backgroundColor: '#000000FF',
+        [theme.breakpoints.down('md')]: {
+            height: 'auto',
+        }
     },
     logo:{
         width: '100%',
@@ -20,6 +22,9 @@ export default makeStyles((theme) => ({
         display: 'flex',
         alignItems: 'center',
         justifyContent: "center",
+        [theme.breakpoints.down('md')]: {
+            flexDirection: 'column',
+        }
     },
     linkitems: {
         margin: '21px 30px',

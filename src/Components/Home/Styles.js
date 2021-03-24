@@ -33,6 +33,7 @@ export default makeStyles ((theme)=>({
         height: 'auto',
         [theme.breakpoints.down('md')]: {
             marginBottom: theme.spacing(8),
+            width: '296px',
         }
     },
     btns:{
@@ -41,10 +42,14 @@ export default makeStyles ((theme)=>({
         alignItems: 'center',
         justifyContent: 'space-evenly',
         marginTop: theme.spacing(4),
+        [theme.breakpoints.down('md')]: {
+            flexDirection: 'column',
+        }
     },
     btn:{
         fontSize: '21px',
         padding: theme.spacing(2),
+        margin: theme.spacing(4),
     },
     title:{
         fontSize: '36px',
