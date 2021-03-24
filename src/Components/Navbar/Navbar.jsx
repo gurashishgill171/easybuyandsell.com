@@ -100,7 +100,7 @@ const Navbar = () => {
     return (
         <div>
             <AppBar position="fixed" color="primary" className={classes.appbar}>
-                <Toolbar>
+                <Toolbar >
                 <img src={Logo} alt="Logo" className={classes.image}/>
                 <div className={classes.grow}/>
                     <div className={classes.mobileversion}>

@@ -12,14 +12,17 @@ export const CurrentUser = ({children}) => {
     
     const [currentUser, setcurrentUser] = useState(null)
 
-    const [products, setproducts] = useState([ {id: 1, title: 'Shoes', description: 'Running shoes', image: [], price: '₹560',seller:'parmeet',email:'parmeet@z.com',phone:'100'},
-    {id: 1, title: 'Shoes', description: 'Running shoes', image: [], price: '₹560',seller:'parmeet',email:'parmeet@z.com',phone:'100'},
-    {id: 1, title: 'Shoes', description: 'Running shoes', image: [], price: '₹560',seller:'parmeet',email:'parmeet@z.com',phone:'100'},
-    {id: 2, title: 'Mattress', description: 'Sleepwell mattress', image: [], price: '₹1200',seller:'parmeet',email:'parmeet@z.com',phone:'100'},
-    {id: 2, title: 'Mattress', description: 'Sleepwell mattress', image: [], price: '₹1200',seller:'parmeet',email:'parmeet@z.com',phone:'100'},
-    {id: 2, title: 'Mattress', description: 'Sleepwell mattress', image: [], price: '₹1200',seller:'parmeet',email:'parmeet@z.com',phone:'100'},
-    {id: 2, title: 'Mattress', description: 'Sleepwell mattress', image: [], price: '₹1200',seller:'parmeet',email:'parmeet@z.com',phone:'100'}])
-   
+    const [products, setproducts] = useState([ ])
+    // {id: 1, title: 'Shoes', description: 'Running shoes', image: [], price: '₹560',seller:'parmeet',email:'parmeet@z.com',phone:'100'},
+    // {id: 1, title: 'Shoes', description: 'Running shoes', image: [], price: '₹560',seller:'parmeet',email:'parmeet@z.com',phone:'100'},
+    // {id: 1, title: 'Shoes', description: 'Running shoes', image: [], price: '₹560',seller:'parmeet',email:'parmeet@z.com',phone:'100'},
+    // {id: 2, title: 'Mattress', description: 'Sleepwell mattress', image: [], price: '₹1200',seller:'parmeet',email:'parmeet@z.com',phone:'100'},
+    // {id: 2, title: 'Mattress', description: 'Sleepwell mattress', image: [], price: '₹1200',seller:'parmeet',email:'parmeet@z.com',phone:'100'},
+    // {id: 2, title: 'Mattress', description: 'Sleepwell mattress', image: [], price: '₹1200',seller:'parmeet',email:'parmeet@z.com',phone:'100'},
+    // {id: 2, title: 'Mattress', description: 'Sleepwell mattress', image: [], price: '₹1200',seller:'parmeet',email:'parmeet@z.com',phone:'100'}
+
+    const [searchProducts, setsearchProducts] = useState([ ])
+
      useEffect(() => {
          auth.onAuthStateChanged((e)=>setcurrentUser(e));
          
@@ -46,7 +49,9 @@ export const CurrentUser = ({children}) => {
 
     return <AuthContext.Provider value={{"currentUser":currentUser,
                                         "products":products,
-                                        "setproducts":setproducts}}>
+                                        "setproducts":setproducts,
+                                        "searchProducts":searchProducts,
+                                        "setsearchProducts":setsearchProducts}}>
          {children}
          </AuthContext.Provider>;
 }

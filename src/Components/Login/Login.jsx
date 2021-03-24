@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import {Paper, Typography, TextField, Button } from '@material-ui/core';
 import useStyles from './styles';
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import {auth} from '../Firebase/firebase'
 import { AuthContext } from '../Firebase/currentUser';
 
@@ -10,10 +10,12 @@ const Login = () => {
      const [email, setemail] = useState()
      const [password, setpassword] = useState()
      const {currentUser}=useContext(AuthContext)
+     const history=useHistory()
      const login=()=>{
               auth.signInWithEmailAndPassword(email,password)
                   .then(()=>{
-                     alert("Succesfully Login")
+                      history.push({pathname:'/buy'})
+                     //alert("Succesfully Login")
 
                   })
                   .catch((e)=>{

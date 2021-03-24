@@ -62,6 +62,10 @@ function App() {
 
                   <Buy />
                 </Route>
+                <Route exact path="/buy/:search">
+
+                  <Buy />
+                </Route>
 
                 <Route exact path="/checkout">
                   <Checkout />

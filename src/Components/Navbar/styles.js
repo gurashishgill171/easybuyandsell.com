@@ -62,5 +62,5 @@ export default makeStyles((theme) =>({
        alignItems: 'center',
        justifyContent: 'center',
        padding: '0px 5px',
-    },
+    }
 }));
