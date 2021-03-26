@@ -1,8 +1,7 @@
 import React,{useState,useContext} from 'react';
 import useStyles from './styles';
-import {Typography, Paper, TextField, Grid, Button, InputLabel, Select, MenuItem} from '@material-ui/core';
+import {Typography, Paper, TextField, Grid, Button, InputLabel, Select, MenuItem, Modal} from '@material-ui/core';
 import SaveIcon from '@material-ui/icons/Save';
-import DeleteIcon from '@material-ui/icons/Delete';
 import PhoneAndroidIcon from '@material-ui/icons/PhoneAndroid';
 import MotorcycleIcon from '@material-ui/icons/Motorcycle';
 import DevicesIcon from '@material-ui/icons/Devices';
@@ -11,12 +10,16 @@ import FaceIcon from '@material-ui/icons/Face';
 import ImportContactsIcon from '@material-ui/icons/ImportContacts';
 import SportsCricketIcon from '@material-ui/icons/SportsCricket';
 import AddIcon from '@material-ui/icons/Add';
-import axios from 'axios'
-import {AuthContext} from '../Firebase/currentUser'
+import axios from 'axios';
+import {AuthContext} from '../Firebase/currentUser';
+import {auth} from '../Firebase/firebase';
+import {Link} from 'react-router-dom';
+
 
 
 
 const Sell = () => {
+    
     const classes = useStyles();
     const {currentUser} = useContext(AuthContext)
     const [open, setOpen] = useState(false);
@@ -27,6 +30,13 @@ const Sell = () => {
     const handleOpen = () => {
         setOpen(true);
     };
+
+    let isloggedin;
+    if(currentUser){
+        isloggedin = true;
+    }else{
+        isloggedin = false;
+    }
     // Field States
     const[name, setname] = useState("");
     const[category, setcategory] = useState("");
@@ -111,8 +121,11 @@ const Sell = () => {
     
     return (
         <>
-            <div className={classes.toolbar}/>
+            {/* <div className={classes.toolbar}/> */}
             <div className={classes.grow}>
+            {
+               isloggedin ? 
+                <>
                 <main className={classes.layout}>
                     <Typography className={classes.title}>Sell your product by adding details...</Typography>
                     <Paper elevation={3} className={classes.paper}>
@@ -237,9 +250,18 @@ const Sell = () => {
                     </Paper>
                     <div className={classes.btngroup}>
                         <Button variant="contained" color="secondary" startIcon={<SaveIcon />} className={classes.btn} onClick={handleSaveProduct}>Save Product</Button>
-                        {/* <Button variant="contained" startIcon={<DeleteIcon />} className={classes.btn}>Delete</Button> */}
                     </div>
                 </main>
+                </> :
+                    <>
+                        <div className={classes.notloggedin}>
+                            <div className={classes.loginNav}>
+                                <Typography className={classes.typo}>You are not loged in</Typography>
+                                <Button variant="contained" color="secondary" component={Link} to="/login">LOG IN</Button>
+                            </div>
+                        </div>
+                    </> 
+                }
             </div>
         </>
     )

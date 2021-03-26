@@ -1,11 +1,15 @@
 *{
     box-sizing: border-box;
     margin: 0;
-    overflow-x: hidden;
 }
 p{
     font-family: sans-serif;
 }
 a{
     text-decoration: none;
+}
+@media only screen and (max-device-width: 475px){
+    *{
+        overflow-x: scroll;
+    }
 }

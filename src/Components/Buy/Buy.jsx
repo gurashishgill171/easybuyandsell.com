@@ -3,21 +3,30 @@ import Products from './Products/Products';
 import useStyles from './styles';
 import SearchIcon from '@material-ui/icons/Search';
 import Footer from '../Footer/Footer';
-import { Button } from '@material-ui/core';
+import { Button, Typography } from '@material-ui/core';
 import axios from 'axios'
 import { AuthContext } from '../Firebase/currentUser';
 import { useHistory, useParams } from 'react-router';
+import {Link} from 'react-router-dom';
 
 
 const Buy = () => {
     const {search}=useParams();
     const classes  = useStyles();
     const history=useHistory();
-     const [query, setquery] = useState()
-     const {setsearchProducts}=useContext(AuthContext)
+    const [query, setquery] = useState()
+    const {setsearchProducts}=useContext(AuthContext)
      
-     
-     const Search=()=>{
+    const {currentUser} = useContext(AuthContext)
+
+    let isloggedin;
+    if(currentUser){
+        isloggedin = true;
+    }else{
+        isloggedin = false;
+    }
+
+    const Search=()=>{
              
               axios.get('http://localhost:8080/search',{
                   params:{query:query}
@@ -42,20 +51,32 @@ const Buy = () => {
               })
 
      }
-      
-
-
-
 
     return (
-        <div className={classes.content}>
-            <div className={classes.search}>
-                <SearchIcon color="secondary" fontSize="xx-large"/>
-                <input type="text" value={query} onChange={(e)=>{setquery(e.target.value)}} className={classes.searchbar} placeholder="Search product name, title" color="secondary"></input>
-                <Button onClick={Search}>Search</Button>
-            </div>
-            <Products isSearch={search==='search'?true:false} />
-        </div>
+        <>
+            {
+                isloggedin ?
+                <>
+                <div className={classes.content}>
+                <div className={classes.search}>
+                    <SearchIcon color="secondary" fontSize="xx-large"/>
+                    <input type="text" value={query} onChange={(e)=>{setquery(e.target.value)}} className={classes.searchbar} placeholder="Search product name, title" color="secondary"></input>
+                    <Button onClick={Search}>Search</Button>
+                </div>
+                    <Products isSearch={search==='search'?true:false} />
+                </div>
+                </>
+            :
+            <>
+                <div className={classes.notloggedin}>
+                    <div className={classes.loginNav}>
+                        <Typography className={classes.typo}>You are not loged in</Typography>
+                        <Button variant="contained" color="secondary" component={Link} to="/login">LOG IN</Button>
+                    </div>
+                </div>
+            </>  
+            }
+        </>
     )
 }
 

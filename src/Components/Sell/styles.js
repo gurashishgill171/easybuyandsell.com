@@ -6,7 +6,7 @@ export default makeStyles ((theme)=>({
       flexGrow: 1,
     },
     layout: {
-        marginTop: theme.spacing(8),
+        marginTop: '75px',
         marginBottom: theme.spacing(4),
         width: 'auto',
         marginLeft: theme.spacing(2),
@@ -81,4 +81,19 @@ export default makeStyles ((theme)=>({
         color: 'red',
         margin: 0,
     },
+    notloggedin: {
+      marginTop: '75px',
+      height: '50vh',
+    },
+    loginNav:{
+      width: '100%',
+      height: '100%',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    typo:{
+      marginBottom: theme.spacing(4),
+    }
 }));

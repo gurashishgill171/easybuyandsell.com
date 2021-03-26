@@ -18,4 +18,19 @@ export default makeStyles((theme) => ({
         height: '45px',
         fontSize: '19px',
     },
+    notloggedin:{
+        marginTop: '75px',
+        height: '50vh',
+    },
+    loginNav:{
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    typo:{
+        marginBottom: theme.spacing(4),
+      }
 }))

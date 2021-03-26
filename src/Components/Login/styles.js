@@ -13,6 +13,8 @@ export default makeStyles((theme)=>({
         height: 'auto',
         width: '100%',
         maxWidth: '620px',
+        marginLeft: theme.spacing(3),
+        marginRight: theme.spacing(3),
     },
     title:{
         width: '100%',
