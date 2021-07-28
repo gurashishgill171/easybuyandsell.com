@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { Paper, Typography, Grid, TextField, FormControl, Select, MenuItem, InputLabel, Button } from '@material-ui/core';
-import useStyles from './styles';
+import './Signup.css';
+import {Button } from '@material-ui/core';
+// import useStyles from './styles';
 import { auth } from '../Firebase/firebase'
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 
 
 const Signup = () => {
-    const classes = useStyles();
+    // const classes = useStyles();
 
     const [fname, setfname] = useState("");
     const [lname, setlname] = useState("");
@@ -112,128 +113,198 @@ const Signup = () => {
     };
 
     return (
-        <>
-        <div className={classes.container}>
-            <Paper elevation={3} className={classes.paper}>
-                <form onSubmit={handleSubmitForm}>
-                    <div className={classes.formTitle}>
-                        <Typography className={classes.title}>CREATE ACCOUNT</Typography>
-                    </div>
-                    <div className={classes.fields}>
-                        <Grid container spacing={3}>
-                            <Grid item xs={6}>
-                                <TextField
-                                    required
-                                    id="standard-required"
-                                    label="First Name"
-                                    fullWidth
-                                    value={fname}
-                                    onChange={(event) => { setfname(event.target.value) }}
-                                />
-                                <p className={classes.error}>{fnameError}</p>
-                            </Grid>
+    //     <>
+    //     <div className={classes.container}>
+    //         <Paper elevation={3} className={classes.paper}>
+    //             <form onSubmit={handleSubmitForm}>
+    //                 <div className={classes.formTitle}>
+    //                     <Typography className={classes.title}>CREATE ACCOUNT</Typography>
+    //                 </div>
+    //                 <div className={classes.fields}>
+    //                     <Grid container spacing={3}>
+    //                         <Grid item xs={6}>
+    //                             <TextField
+    //                                 required
+    //                                 id="standard-required"
+    //                                 label="First Name"
+    //                                 fullWidth
+    //                                 value={fname}
+    //                                 onChange={(event) => { setfname(event.target.value) }}
+    //                             />
+    //                             <p className={classes.error}>{fnameError}</p>
+    //                         </Grid>
 
 
-                            <Grid item xs={6}>
-                                <TextField
-                                    required
-                                    id="standard-required"
-                                    label="Last Name"
-                                    fullWidth
-                                    value={lname}
-                                    onChange={(event => { setlname(event.target.value) })}
-                                />
-                                <p className={classes.error}>{lnameError}</p>
-                            </Grid>
-                            <Grid item xs={6}>
-                                <TextField
-                                    required
-                                    id="standard-required"
-                                    label="Age"
-                                    type="number"
-                                    fullWidth
-                                    value={age}
-                                    onChange={(event => { setage(event.target.value) })}
-                                />
-                            </Grid>
-                            <Grid item xs={6}>
-                                <FormControl fullWidth>
-                                    <InputLabel id="demo-controlled-open-select-label">College</InputLabel>
-                                    <Select
-                                        required
-                                        labelId="demo-controlled-open-select-label"
-                                        id="demo-controlled-open-select"
-                                        open={open}
-                                        onClose={handleClose}
-                                        onOpen={handleOpen}
-                                        value={clg}
-                                        onChange={(event => { setclg(event.target.value) })}
-                                    >
-                                        <MenuItem value={"Thapar University"}>Thapar University</MenuItem>
-                                        <MenuItem value={"Punjab Engineering College"}>Punjab Engineering College</MenuItem>
-                                        <MenuItem value={"IIT Delhi"}>IIT Delhi</MenuItem>
-                                    </Select>
-                                </FormControl>
-                            </Grid>
-                            <Grid item xs={6}>
-                                <TextField
-                                    required
-                                    id="standard-required"
-                                    label="Email"
-                                    type="email"
-                                    fullWidth
-                                    value={email}
-                                    onChange={(event => { setemail(event.target.value) })}
-                                />
-                            </Grid>
-                            <Grid item xs={6}>
-                                <TextField
-                                    required
-                                    id="standard-required"
-                                    label="Phone Number"
-                                    type="text"
-                                    fullWidth
-                                    value={pnum}
-                                    onChange={(event => { setpnum(event.target.value) })}
-                                />
-                            </Grid>
-                            <Grid item xs={12}>
-                                <TextField
-                                    required
-                                    id="standard-required"
-                                    label="Password"
-                                    type="password"
-                                    fullWidth
-                                    value={pass1}
-                                    onChange={(event => { setpass1(event.target.value) })}
-                                />
-                                <p className={classes.error}>{pass1Error}</p>
-                            </Grid>
-                            <Grid item xs={12}>
-                                <TextField
-                                    required
-                                    id="standard-required"
-                                    label="Confirm Password"
-                                    type="password"
-                                    fullWidth
-                                    value={pass2}
-                                    onChange={(event => { setpass2(event.target.value) })}
-                                />
-                                <p className={classes.error}>{pass2Error} {passequalError}</p>
-                            </Grid>
-                        </Grid>
-                    </div>
-                    <div className={classes.btn}>
-                        <Button variant="contained" type="submit" color="secondary">Sign Up</Button>
-                    </div>
-                    <div className={classes.foot}>
-                        <Typography>Already have an account?</Typography>
-                        <Button variant="contained" color="secondary" className={classes.btn2} component={Link} to="/login">Login</Button>
-                    </div>
+    //                         <Grid item xs={6}>
+    //                             <TextField
+    //                                 required
+    //                                 id="standard-required"
+    //                                 label="Last Name"
+    //                                 fullWidth
+    //                                 value={lname}
+    //                                 onChange={(event => { setlname(event.target.value) })}
+    //                             />
+    //                             <p className={classes.error}>{lnameError}</p>
+    //                         </Grid>
+    //                         <Grid item xs={6}>
+    //                             <TextField
+    //                                 required
+    //                                 id="standard-required"
+    //                                 label="Age"
+    //                                 type="number"
+    //                                 fullWidth
+    //                                 value={age}
+    //                                 onChange={(event => { setage(event.target.value) })}
+    //                             />
+    //                         </Grid>
+    //                         <Grid item xs={6}>
+    //                             <FormControl fullWidth>
+    //                                 <InputLabel id="demo-controlled-open-select-label">College</InputLabel>
+    //                                 <Select
+    //                                     required
+    //                                     labelId="demo-controlled-open-select-label"
+    //                                     id="demo-controlled-open-select"
+    //                                     open={open}
+    //                                     onClose={handleClose}
+    //                                     onOpen={handleOpen}
+    //                                     value={clg}
+    //                                     onChange={(event => { setclg(event.target.value) })}
+    //                                 >
+    //                                     <MenuItem value={"Thapar University"}>Thapar University</MenuItem>
+    //                                     <MenuItem value={"Punjab Engineering College"}>Punjab Engineering College</MenuItem>
+    //                                     <MenuItem value={"IIT Delhi"}>IIT Delhi</MenuItem>
+    //                                 </Select>
+    //                             </FormControl>
+    //                         </Grid>
+    //                         <Grid item xs={6}>
+    //                             <TextField
+    //                                 required
+    //                                 id="standard-required"
+    //                                 label="Email"
+    //                                 type="email"
+    //                                 fullWidth
+    //                                 value={email}
+    //                                 onChange={(event => { setemail(event.target.value) })}
+    //                             />
+    //                         </Grid>
+    //                         <Grid item xs={6}>
+    //                             <TextField
+    //                                 required
+    //                                 id="standard-required"
+    //                                 label="Phone Number"
+    //                                 type="text"
+    //                                 fullWidth
+    //                                 value={pnum}
+    //                                 onChange={(event => { setpnum(event.target.value) })}
+    //                             />
+    //                         </Grid>
+    //                         <Grid item xs={12}>
+    //                             <TextField
+    //                                 required
+    //                                 id="standard-required"
+    //                                 label="Password"
+    //                                 type="password"
+    //                                 fullWidth
+    //                                 value={pass1}
+    //                                 onChange={(event => { setpass1(event.target.value) })}
+    //                             />
+    //                             <p className={classes.error}>{pass1Error}</p>
+    //                         </Grid>
+    //                         <Grid item xs={12}>
+    //                             <TextField
+    //                                 required
+    //                                 id="standard-required"
+    //                                 label="Confirm Password"
+    //                                 type="password"
+    //                                 fullWidth
+    //                                 value={pass2}
+    //                                 onChange={(event => { setpass2(event.target.value) })}
+    //                             />
+    //                             <p className={classes.error}>{pass2Error} {passequalError}</p>
+    //                         </Grid>
+    //                     </Grid>
+    //                 </div>
+    //                 <div className={classes.btn}>
+    //                     <Button variant="contained" type="submit" color="secondary">Sign Up</Button>
+    //                 </div>
+    //                 <div className={classes.foot}>
+    //                     <Typography>Already have an account?</Typography>
+    //                     <Button variant="contained" color="secondary" className={classes.btn2} component={Link} to="/login">Login</Button>
+    //                 </div>
+    //             </form>
+    //         </Paper>
+    //     </div>
+    // </>
+        <div className="signup">
+            <div className="signup_container">
+                <h1>Create your Account</h1>
+                <form>
+                    <div className="form_container">
+                        <div className="form_cont">
+                            <div className="form_elements">
+                                <h4>First Name</h4>
+                                <input type="text" required value={fname} onChange={(event) => { setfname(event.target.value) }}/>
+                                <p className="error">{fnameError}</p>
+                            </div>
+                            <div className="form_elements">
+                                <h4>Last Name</h4>
+                                <input type="text" required value={lname} onChange={(event => { setlname(event.target.value) })}/>
+                                <p className="error">{lnameError}</p>
+                            </div>
+                        </div>
+
+                        <div className="form_cont">
+                            <div className="form_elements">
+                                <h4>Age</h4>
+                                <input type="number" required value={age} onChange={(event => { setage(event.target.value) })}/>
+                            </div>
+                            <div className="form_elements">
+                                <h4>Choose your College</h4>
+                                <select id="college" name="college" required value={clg} onChange={(event => {setclg(event.target.value) })}>
+                                    <option value="TIET">Thapar Institute Of Engineering and Technology</option>
+                                    <option value="PEC">Punjab Engineering College</option>
+                                    <option value="CU">Chandigarh University</option>
+                                    <option value="NITJ">NIT Jalandhar</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div className="form_cont">
+                            <div className="form_elements">
+                                <h4>Email</h4>
+                                <input type="email" value={email} required onChange={(event => { setemail(event.target.value) })}/>
+                            </div>
+                            <div className="form_elements">
+                                <h4>Mobile Number</h4>
+                                <input type="number" value={pnum} required onChange={(event => { setpnum(event.target.value) })}/>
+                            </div>
+                        </div>
+
+                        <div className="form_cont">
+                            <div className="form_elements">
+                                <h4>Password</h4>
+                                <input type="password" value={pass1} required onChange={(event => { setpass1(event.target.value) })}/>
+                                <p className="error">{pass1Error}</p>
+                            </div>
+                            <div className="form_elements">
+                                <h4>Confirm Password</h4>
+                                <input type="password" value={pass2} required onChange={(event => { setpass2(event.target.value) })}/>
+                                <p className="error">{pass2Error} {passequalError}</p>
+                            </div>
+                        </div>
+                        </div>
                 </form>
-            </Paper>
+
+                <div className="form_btn">
+                    <Button variant="contained" className="btn" onClick={handleSubmitForm}>Sign Up</Button>
+                </div>
+
+                <p>Already have an account?</p>
+                <div className="form_btn">
+                    <Button variant="contained" className="btn" component={Link} to="/login">Log In</Button>
+                </div>
+            </div>
         </div>
-    </>
     )
 }
 

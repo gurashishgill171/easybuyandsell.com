@@ -1,0 +1,91 @@
+.sell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.sell_container {
+  min-width: 50%;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  padding: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.sell_title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #3f51b5;
+}
+.items {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+}
+.form_container {
+  border: 3px solid lightgray;
+  border-radius: 10px;
+  margin: 15px 0px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+}
+.form_element {
+  width: 100%;
+  padding: 10px;
+}
+.form_element > h4 {
+  color: #000000;
+  font-size: 18px;
+  font-weight: 600;
+}
+.form_element > input {
+  margin-top: 10px !important;
+  height: 35px !important;
+  width: 70% !important;
+}
+.form_element > textarea {
+  margin-top: 10px !important;
+  width: 70% !important;
+}
+.btn_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0px;
+}
+.btn {
+  margin: 10px 0px !important;
+  text-transform: inherit !important;
+  min-width: 120px !important;
+  height: 45px !important;
+  background-color: #3f51b5 !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+}
+
+@media (max-width: 500px) {
+  .sell_container {
+    margin: 40px 20px;
+  }
+  .form_container {
+    border: 2px solid lightgray;
+    border-radius: 10px;
+  }
+  .sell_title {
+    font-size: 24px;
+  }
+}

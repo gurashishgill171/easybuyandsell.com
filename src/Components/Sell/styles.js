@@ -5,6 +5,9 @@ export default makeStyles ((theme)=>({
     root: {
       flexGrow: 1,
     },
+    layout_container: {
+      backgroundColor: '#eeeeee',
+    },
     layout: {
         marginTop: '75px',
         marginBottom: theme.spacing(4),
@@ -33,8 +36,12 @@ export default makeStyles ((theme)=>({
       },
       title: {
           fontSize: '24px',
+          fontWeight: '800',
+          color: '#3f51b5',
           [theme.breakpoints.up('md')]:{
-              fontSize: '28px'
+              fontSize: '28px',
+              fontWeight: '800',
+              color: '#3f51b5',
           }
       },
       fieldtitle: {

@@ -44,40 +44,47 @@ function App() {
                 <Route exact path="/">
                   <Navbar />
                   <Home />
+                  <Footer />
                 </Route>
 
                 <Route exact path="/sell">
                   <Navbar />
                   <Sell />
+                  <Footer />
                 </Route>
 
                 <Route exact path="/signup">
-                  <Navbar />
                   <Signup />
                 </Route>
 
                 <Route exact path="/login">
-                  <Navbar />
                   <Login />
                 </Route>
 
                 <Route exact path="/buy">
                   <Navbar />
                   <Buy />
+                  <Footer />
                 </Route>
                 <Route exact path="/buy/:search">
-
                   <Buy />
+                  <Footer />
                 </Route>
 
                 <Route exact path="/checkout">
                   <Navbar />
                   <Checkout />
+                  <Footer />
+                </Route>
+
+                <Route exact path="/myads">
+                  <Navbar />
+                  <h1>Your Ads</h1>
+                  <Footer />
                 </Route>
 
               </Switch>
             </div>
-            <Footer />
           </Router>
         </CurrentUser>
       </ThemeProvider>
