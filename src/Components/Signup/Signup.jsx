@@ -37,7 +37,7 @@ const Signup = () => {
                         id: auth.currentUser.uid,
                         name: fname + " " + lname,
                         age: age,
-                        college: clg,
+                        college: "Thapar University",
                         email: email,
                         phone: pnum
                     }).then(() => {
@@ -261,7 +261,7 @@ const Signup = () => {
                             <div className="form_elements">
                                 <h4>Choose your College</h4>
                                 <select id="college" name="college" required value={clg} onChange={(event => {setclg(event.target.value) })}>
-                                    <option value="TIET">Thapar Institute Of Engineering and Technology</option>
+                                    <option value="TIET">Thapar University</option>
                                     <option value="PEC">Punjab Engineering College</option>
                                     <option value="CU">Chandigarh University</option>
                                     <option value="NITJ">NIT Jalandhar</option>
